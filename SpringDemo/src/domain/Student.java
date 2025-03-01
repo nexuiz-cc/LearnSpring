@@ -5,7 +5,9 @@ public class Student {
     private String sname;
     private String ssex;
     private Integer sage;
+
     public Student() {
+        System.out.println("Student构造方法");
     }
 
     public Student(Integer sid, String sname, String ssex, Integer sage) {
@@ -13,6 +15,13 @@ public class Student {
         this.sname = sname;
         this.ssex = ssex;
         this.sage = sage;
+    }
+
+    public void init(){
+        System.out.println("创建对象同时做的事情");
+    }
+    public void destroy(){
+        System.out.println("销毁对象同时做的事情");
     }
 
     public Integer getSid() {
