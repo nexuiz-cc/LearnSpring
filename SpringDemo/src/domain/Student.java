@@ -1,27 +1,40 @@
 package domain;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
+import java.util.logging.Handler;
+
 public class Student {
+
     private Integer sid;
     private String sname;
     private String ssex;
     private Integer sage;
+    private static final Logger logger = LogManager.getLogger(Student.class);
+
 
     public Student() {
-        System.out.println("Student构造方法");
+        logger.info("Student无参数构造方法执行了！");
     }
 
     public Student(Integer sid, String sname, String ssex, Integer sage) {
+        logger.info("Student带参数构造方法执行了！");
         this.sid = sid;
         this.sname = sname;
         this.ssex = ssex;
         this.sage = sage;
     }
 
-    public void init(){
-        System.out.println("创建对象同时做的事情");
-    }
-    public void destroy(){
-        System.out.println("销毁对象同时做的事情");
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sid=" + sid +
+                ", sname='" + sname + '\'' +
+                ", ssex='" + ssex + '\'' +
+                ", sage=" + sage +
+                '}';
     }
 
     public Integer getSid() {
@@ -29,6 +42,7 @@ public class Student {
     }
 
     public void setSid(Integer sid) {
+        System.out.println("setSid方法执行啦");
         this.sid = sid;
     }
 
