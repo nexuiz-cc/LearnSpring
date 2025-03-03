@@ -3,7 +3,10 @@ package controller;
 import service.StudentService;
 
 public class StudentController {
-    private StudentService service = new StudentService();
+    private StudentService service;
+    public StudentController(StudentService service) {
+        this.service = service;
+    }
 
     public void login(){
         //获取请求发送过来的信息
